@@ -57,7 +57,7 @@ Next, you can fill out the `rules` section of your yaml as normal:
   +     cmor_variable: fgco2
   +     pipelines: [my-regridder]
   +     inputs:
-  +        - path: /work/ab0995/a270243/pymor_workshop/data/
+  +        - path: /work/ab0995/a270243/pycmor_workshop/data/
   +          pattern: CO2f_fesom_mon_300.0101.nc
   +     output_directory: "."
   +     # Metadata block

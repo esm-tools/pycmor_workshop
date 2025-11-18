@@ -61,7 +61,7 @@ the data from the basic example data here:
             path: "numbers.txt"
         inputs:
           - pattern: "modelA_temp_....0101.nc"
-            path: "/work/ab0995/a270243/pymor_workshop/exercises/data"
+            path: "/work/ab0995/a270243/pycmor_workshop/exercises/data"
         pipelines:
            - "linear_trend"
   ```
@@ -93,7 +93,7 @@ Also define the `linear_trend` pipeline.
             path: "numbers.txt"
         inputs:
           - pattern: "modelA_temp_....0101.nc"
-            path: "/work/ab0995/a270243/pymor_workshop/exercises/data"
+            path: "/work/ab0995/a270243/pycmor_workshop/exercises/data"
         pipelines:
            - "linear_trend"
   pipelines:
