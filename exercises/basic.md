@@ -60,10 +60,10 @@ $ pymor process basic.yaml
 
 However, you should submit this to the SLURM scheduler, so instead:
 ```bash
-$ sbatch pymor-basic.slurm
+$ sbatch pycmor-basic.slurm
 ```
 
-Note that you will need to modify the `pymor-basic.slurm` file to match your account!
+Note that you will need to modify the `pycmor-basic.slurm` file to match your account!
 
 <details>
   <summary>Solution</summary>

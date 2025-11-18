@@ -1,4 +1,4 @@
-# Pymor Workshop
+# Pycmor Workshop
 
 Clone this repository to get access to the slides and practice problems:
 
@@ -23,17 +23,17 @@ During the live workshop, you'll be able to use the QOS `--qos=training` in DKRZ
   * Workshop intro - [Slides](https://github.com/esm-tools/pymor_workshop/blob/main/pdfs/aims_outline.pdf), [Video](https://nextcloud.awi.de/s/KswDLXAYfiWeeQS)
     * Aims
     * Outline
-  * Pymor - [Slides](https://github.com/esm-tools/pymor_workshop/blob/main/pdfs/pymor_intro.pdf), [Video](https://nextcloud.awi.de/s/9wRE2YaweAX98bp)
-    * What is Pymor?
-    * Main Pymor features
-  * Demo: [pymor cli](https://github.com/esm-tools/pymor_workshop/blob/main/demos/cli.md), [Video](https://nextcloud.awi.de/s/TLcSQkpos66i33n)
+  * Pycmor - [Slides](https://github.com/esm-tools/pymor_workshop/blob/main/pdfs/pymor_intro.pdf), [Video](https://nextcloud.awi.de/s/9wRE2YaweAX98bp)
+    * What is Pycmor?
+    * Main Pycmor features
+  * Demo: [pycmor cli](https://github.com/esm-tools/pymor_workshop/blob/main/demos/cli.md), [Video](https://nextcloud.awi.de/s/TLcSQkpos66i33n)
   * Time to resolve installation problems @pgierz
-    * Have you installed Pymor inside a conda environment named `pymor` already?
-    * Can you run `pymor --help` and other commands?
+    * Have you installed Pycmor inside a conda environment named `pycmor` already?
+    * Can you run `pycmor --help` and other commands?
     * Maybe you need to upgrade (`pip install --upgrade py-cmor[dev,fesom]`)
-### 2. Pymor syntax
+### 2. Pycmor syntax
   * Presentation - [Slides](https://github.com/esm-tools/pymor_workshop/blob/main/pdfs/yaml_syntax.pdf), [Video](https://nextcloud.awi.de/s/AWCYpscWwzozxRW)
-  * Exercise: [Running a basic pymor process (text and solutions)](https://github.com/esm-tools/pymor_workshop/blob/main/exercises/basic.md), [Video](https://nextcloud.awi.de/s/gxetpicnqBNdsiK)
+  * Exercise: [Running a basic pycmor process (text and solutions)](https://github.com/esm-tools/pymor_workshop/blob/main/exercises/basic.md), [Video](https://nextcloud.awi.de/s/gxetpicnqBNdsiK)
 ### 3. Features
 #### 3.1. Units (`module_units` and `cmor_units`)
 * Presentation - [Slides](https://github.com/esm-tools/pymor_workshop/blob/main/pdfs/units.pdf), [Video](https://nextcloud.awi.de/s/NpfBNQ5wBo2GMZx)
@@ -58,54 +58,54 @@ During the live workshop, you'll be able to use the QOS `--qos=training` in DKRZ
 * Exercise: [Using aux files](https://github.com/esm-tools/pymor_workshop/blob/main/exercises/aux_files.md)
 #### 3.8. PyFESOM
 * Presentation - [Slides](https://github.com/esm-tools/pymor_workshop/blob/main/pdfs/pyfesom2_features.pdf)
-* Exercise: [Using pyfesom2 with pymor](https://github.com/esm-tools/pymor_workshop/blob/main/exercises/pyfesom2_exercises.md)
-### 4. Try Pymor with your data
+* Exercise: [Using pyfesom2 with pycmor](https://github.com/esm-tools/pymor_workshop/blob/main/exercises/pyfesom2_exercises.md)
+### 4. Try Pycmor with your data
 ### 5. Close the workshop
 
 ---
 
-## Install Pymor
+## Install Pycmor
 
-As the data to run the exercises lives on Levante,(DKRZ), we need to setup the Pymor package on Levante.
+As the data to run the exercises lives on Levante,(DKRZ), we need to setup the Pycmor package on Levante.
 
 The installation is done in 2 steps:
 
   1. Create a virtual environment
-  2. Install Pymor
+  2. Install Pycmor
 
 ### Create a virtual environment
 
-**Note:** the exercises assume you have a `pymor` conda environment, so make sure when you create the environment that its name matches that.
+**Note:** the exercises assume you have a `pycmor` conda environment, so make sure when you create the environment that its name matches that.
 
 ```bash
 module load python3
 eval "$(conda shell.bash hook)"      # Init conda without the need to add extra lines to ~/.bashrc
-conda create -n pymor python=3.10    # Create a conda environment named pymor
+conda create -n pycmor python=3.10    # Create a conda environment named pycmor
 ```
 
-### Install Pymor
+### Install Pycmor
 
 ```bash
-conda activate pymor
+conda activate pycmor
 pip install --isolated py-cmor[dev,fesom]
 ```
 
-You can then check the Pymor works by running:
+You can then check the Pycmor works by running:
 
 ```bash
-pymor --version
-pymor --help
+pycmor --version
+pycmor --help
 ```
 
 For additional information, check out the following links
 
 - Creating Virtual environments on Levante: [Python environment locations](https://docs.dkrz.de/blog/2021/conda_path.html#python-environment-locations).
-- Installing Pymor: [Pymor documentation](https://pymor.readthedocs.io/en/latest/installation.html).
+- Installing Pycmor: [Pycmor documentation](https://pymor.readthedocs.io/en/latest/installation.html).
 
 
-## Pymor workshop repository
+## Pycmor workshop repository
 
-The Pymor workshop repository contains scripts to run the exercises.
+The Pycmor workshop repository contains scripts to run the exercises.
 
 ```bash
 work="/work/$(id -gn)/$USER"
@@ -131,7 +131,7 @@ ln -sv /work/ab0995/a270243/pymor_workshop/exercises/data ./exercises/data
 ```
 
 Alternatively, if you would like to use synthetic data made up of random numbers, but with realistic metadata, dimensions,
-and attributes, you can generate some. Make sure you are in the same Python environment as `pymor` is installed for this:
+and attributes, you can generate some. Make sure you are in the same Python environment as `pycmor` is installed for this:
 ```bash
 make fake-data
 ln -sv ./fake-data ./exercises/data

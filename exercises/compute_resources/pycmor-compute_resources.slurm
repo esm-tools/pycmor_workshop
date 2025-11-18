@@ -1,5 +1,5 @@
 #!/bin/bash -e
-#SBATCH --job-name=pymor-controller  # <<< This is the main job, it will launch subjobs if you have Dask enabled.
+#SBATCH --job-name=pycmor-controller  # <<< This is the main job, it will launch subjobs if you have Dask enabled.
 #SBATCH --account=                      # <<< Adapt this to your computing account!
 #SBATCH --partition=compute
 #SBATCH --nodes=1
@@ -7,6 +7,6 @@
 
 module load python3
 eval "$(conda shell.bash hook)"
-conda activate pymor
-which pymor
-time pymor process compute_resources.yaml
+conda activate pycmor
+which pycmor
+time pycmor process compute_resources.yaml

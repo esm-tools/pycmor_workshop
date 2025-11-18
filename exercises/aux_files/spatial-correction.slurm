@@ -1,5 +1,5 @@
 #!/bin/bash -e
-#SBATCH --job-name=pymor-controller  # <<< This is the main job, it will launch subjobs if you have Dask enabled.
+#SBATCH --job-name=pycmor-controller  # <<< This is the main job, it will launch subjobs if you have Dask enabled.
 #SBATCH --account=                      # <<< Adapt this to your computing account!
 #SBATCH --partition=compute
 #SBATCH --nodes=1
@@ -8,5 +8,5 @@
 #loadconda
 module load python3
 source $(conda info --base)/etc/profile.d/conda.sh
-conda activate pymor
-time pymor process spatial-correction.yaml 
+conda activate pycmor
+time pycmor process spatial-correction.yaml 
