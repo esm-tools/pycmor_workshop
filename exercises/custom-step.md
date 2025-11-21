@@ -100,6 +100,6 @@ already, you can install it using `pip install py-cmor[fesom]`.
 
 1. In terminal, navigate to the exercise folder `./custom_functions`.
 2. Review or edit `wo_cellarea.yaml` file as necessary.
-3. Submit the job using `sbatch pymor_wo_cellarea.slurm`.
+3. Submit the job using `sbatch pycmor_wo_cellarea.slurm`.
 
 

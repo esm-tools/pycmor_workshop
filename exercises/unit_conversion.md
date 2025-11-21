@@ -5,11 +5,11 @@ After cmorization process the units in the output files are expected to match
 those defined in the CMIP tables.
 
 When the units in the source files differ from the units in the CMIP tables,
-Pymor tool tries to handle the unit conversion automatically. It can also handle
+Pycmor tool tries to handle the unit conversion automatically. It can also handle
 chemical names in the units (for example, moles of carbon). You, as a user, can
-also let Pymor know what are the units of your source data. This is useful to
+also let Pycmor know what are the units of your source data. This is useful to
 define units for variables that are incorrectly defined in the source files, or
-that are not recognised by the unit-conversion libraries used by Pymor.
+that are not recognised by the unit-conversion libraries used by Pycmor.
 
 The exercises covers the following topics:
 
@@ -34,7 +34,7 @@ The units for `CO2f` is `mmolC/m2/d`.  The unit for `fgco2` in CMIP tables is `k
 
   ```bash
   # change directory to exercise folder
-  cd /work/$(id -gn)/$USER/pymor_workshop/exercises
+  cd /work/$(id -gn)/$USER/pycmor_workshop/exercises
   
   # grep for units in source file
   ncdump -h data/CO2f_fesom_mon_30010101.nc | grep units
@@ -73,7 +73,7 @@ The units for `CO2f` is `mmolC/m2/d`.  The unit for `fgco2` in CMIP tables is `k
 
   3. TASK: submit the job
 
-As Pymor can understand unit `molC` and can convert to `kg`, the next step submit the job.
+As Pycmor can understand unit `molC` and can convert to `kg`, the next step submit the job.
 
   ```bash
   cd unit_conversion
@@ -106,11 +106,11 @@ EXERCISE FILES: incorrect_units.yaml, incorrect_units.slurm
 DATA: xCO2f_fesom_mon*.nc
 ```
 
-To simulate incorrect units (units that cannot be interpreted by Pymor) in
+To simulate incorrect units (units that cannot be interpreted by Pycmor) in
 source files, the units in files `xCO2f_fesom_mon*.nc` are set to
-`mol/m2/d`. These units are "incorrect" because Pymor needs to be made aware of
+`mol/m2/d`. These units are "incorrect" because Pycmor needs to be made aware of
 the chemical composition before it can automatically convert moles to `kg`.
-This means, we have tell Pymor tool the correct units by setting it in
+This means, we have tell Pycmor tool the correct units by setting it in
 `incorrect_units.yaml` file. This is done by using the parameter
 `model_unit`.
 
@@ -179,8 +179,8 @@ This means, we have tell Pymor tool the correct units by setting it in
      <summary>Expected output</summary>
 
      ```bash
-     | DEBUG    | pymor.std_lib.units:handle_chemicals:159 - Chemical element Carbon detected in units mmolC/m2/d.
-     | DEBUG    | pymor.std_lib.units:handle_chemicals:160 - Registering definition: molC = 12.0107 * g
+     | DEBUG    | pycmor.std_lib.units:handle_chemicals:159 - Chemical element Carbon detected in units mmolC/m2/d.
+     | DEBUG    | pycmor.std_lib.units:handle_chemicals:160 - Registering definition: molC = 12.0107 * g
      ```
    </details>
 
@@ -209,13 +209,13 @@ Some of the units as described in the tables of the CMOR convention are physical
 a prior knowledge and interpretation of the variable description. Let's take for example, the sea water salinity
 (`so`) where its units are defined in the CMOR standard as `0.001`. This is clearly a ratio but whether this ratio
 is express in mass or volume is not obvious. To achieve a general conversion of units from model data to standards
-we need to define a mapping for such variables, telling Pymor which dimensionless units map to a more phycically
+we need to define a mapping for such variables, telling Pycmor which dimensionless units map to a more phycically
 complete definition (in the case of the salinity `0.001` maps to `g/kg`).
 
 For providing an alias for dimensionless-units, use parameter
 `dimensionless_mapping_table` to set the unit mappings on the rule. The value
 for this parameter is a yaml file mapping the original unit to an alias unit. If this parameter
-is not indicated, the default `dimensionless_mappings.yaml` provided with Pymor is used.
+is not indicated, the default `dimensionless_mappings.yaml` provided with Pycmor is used.
 
 ---
 
@@ -421,17 +421,17 @@ is not indicated, the default `dimensionless_mappings.yaml` provided with Pymor 
    
 ---
 
-3. TASK: Explore the dimensionless mapping table included in Pymor.
+3. TASK: Explore the dimensionless mapping table included in Pycmor.
 
    ```bash
-   filepath=$(python -c "import pathlib; import pymor.data; print(str(pathlib.Path(pymor.data.__file__).parent) + '/dimensionless_mappings.yaml')")
+   filepath=$(python -c "import pathlib; import pycmor.data; print(str(pathlib.Path(pycmor.data.__file__).parent) + '/dimensionless_mappings.yaml')")
    
    echo $filepath
    cat $filepath
    ```
    
    Notice that very few fields (`sea_surface_salinity`) are pre-populated with
-   aliases.  If your variable is not in pre-poulated fields, Pymor complains
+   aliases.  If your variable is not in pre-poulated fields, Pycmor complains
    about unit conversion.
    
    To fill in missing entries, either modify this file or provide a new yaml
@@ -439,7 +439,7 @@ is not indicated, the default `dimensionless_mappings.yaml` provided with Pymor 
    parameter.
    
    To make newly added entries available for everyone, please create a
-   PullRequest in the [Pymor repo](https://github.com/esm-tools/pymor/pulls)
+   PullRequest in the [Pycmor repo](https://github.com/esm-tools/pymor/pulls)
    using the modified built-in mapping table.
 
    NOTE: It is **not** expected from you to create a PullRequest during
@@ -493,7 +493,7 @@ DATA: so_fesom_mon*.nc
 ---
 
   - The dimensionless unit `0.001` can be expressed as `g/kg` to indicate `psu`.
-    This mapping is already built-in into Pymor but here we want to explicitly use this mapping in cmorization process.
+    This mapping is already built-in into Pycmor but here we want to explicitly use this mapping in cmorization process.
     
     ```bash
     cd unit_conversion

@@ -66,7 +66,7 @@ The frequency of the CMORised data should be yearly (`"frequency": "yr"`) and is
 
 ---
 
-3. Submit the job (`sbatch pymor.slurm`) and check the output. What is the time frequency of the new files?
+3. Submit the job (`sbatch pycmor.slurm`) and check the output. What is the time frequency of the new files?
 
 <details>
   <summary><b>Solution</b></summary>
@@ -96,5 +96,5 @@ Only one timestep is available, which is the result of making the mean over the 
 
 1. In terminal, change into `./temporal_frequency/` directory
 2. Edit `temporal-frequency-example.yaml` file as necessary.
-3. Submit the job to slurm scheduler. `sbatch pymor.slurm`
+3. Submit the job to slurm scheduler. `sbatch pycmor.slurm`
 4. Check the output of the job.

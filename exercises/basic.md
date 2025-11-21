@@ -26,8 +26,8 @@ Configure `pymor` to use:
   ```yaml
   general:
     cmor_version: CMIP6
-    CMIP_Tables_Dir: /work/ab0995/a270243/pymor_workshop/cmip6-cmor-tables/Tables/
-    CV_Dir: /work/ab0995/a270243/pymor_workshop/cmip6-cmor-tables/CMIP6_CVs/
+    CMIP_Tables_Dir: /work/ab0995/a270243/pycmor_workshop/cmip6-cmor-tables/Tables/
+    CV_Dir: /work/ab0995/a270243/pycmor_workshop/cmip6-cmor-tables/CMIP6_CVs/
   pymor:
     warn_on_no_rule: False
     # dask_cluster: local
@@ -47,7 +47,7 @@ Configure `pymor` to use:
       variant_label: "r1i1p1f1"
       inputs:
         - pattern: "modelA_temp_....0101.nc"
-          path: "/work/ab0995/a270243/pymor_workshop/exercises/data"
+          path: "/work/ab0995/a270243/pycmor_workshop/exercises/data"
   ```
 </details>
 
@@ -60,10 +60,10 @@ $ pymor process basic.yaml
 
 However, you should submit this to the SLURM scheduler, so instead:
 ```bash
-$ sbatch pymor-basic.slurm
+$ sbatch pycmor-basic.slurm
 ```
 
-Note that you will need to modify the `pymor-basic.slurm` file to match your account!
+Note that you will need to modify the `pycmor-basic.slurm` file to match your account!
 
 <details>
   <summary>Solution</summary>
