@@ -19,25 +19,34 @@ During the live workshop, you'll be able to use the QOS `--qos=training` in DKRZ
 
 ## Outline
 
-### 1. Intro
+### 1. Intro [Pavan]
   * Workshop intro - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/aims_outline.pdf), [Video](https://nextcloud.awi.de/s/KswDLXAYfiWeeQS)
     * Aims
     * Outline
-  * Pycmor - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/pymor_intro.pdf), [Video](https://nextcloud.awi.de/s/9wRE2YaweAX98bp)
-    * What is Pycmor?
+  * Pycmor [Paul] - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/pymor_intro.pdf), [Video](https://nextcloud.awi.de/s/9wRE2YaweAX98bp)
+    * What is Pycmor? 
     * Main Pycmor features
   * Demo: [pycmor cli](https://github.com/esm-tools/pycmor_workshop/blob/main/demos/cli.md), [Video](https://nextcloud.awi.de/s/TLcSQkpos66i33n)
   * Time to resolve installation problems @pgierz
     * Have you installed Pycmor inside a conda environment named `pycmor` already?
     * Can you run `pycmor --help` and other commands?
     * Maybe you need to upgrade (`pip install --upgrade py-cmor[dev,fesom]`)
-### 2. Pycmor syntax
+### 2. Pycmor syntax [Paul]
   * Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/yaml_syntax.pdf), [Video](https://nextcloud.awi.de/s/AWCYpscWwzozxRW)
   * Exercise: [Running a basic pycmor process (text and solutions)](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/basic.md), [Video](https://nextcloud.awi.de/s/gxetpicnqBNdsiK)
 ### 3. Features
-#### 3.1. Units (`module_units` and `cmor_units`)
+#### 3.1. Units (`module_units` and `cmor_units`) [Pavan]
 * Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/units.pdf), [Video](https://nextcloud.awi.de/s/NpfBNQ5wBo2GMZx)
 * Exercise: [Unit conversion (text and solutions)](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/unit_conversion.md), [Video](https://nextcloud.awi.de/s/bzmkrYqRfDW3ZF3)
+#### 3.6. Pipelines and custom steps [Pavan]
+* Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/pipelines_and_custom_steps.pdf), [Video](https://nextcloud.awi.de/s/KkNaoXWESE2zTiM)
+* Exercise: [Add a custom step in the pipeline](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/custom-step.md), [Video](https://nextcloud.awi.de/s/qbzS5MPopt9nBnJ)
+#### 3.7. Combining model output variables [Paul]
+* Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/combining_variables.pdf)
+* Exercise: [Using aux files](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/aux_files.md)
+
+----
+
 #### 3.2. Time span for output files (`file_timespan`)
 * Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/file_timespan.pdf), [Video](https://nextcloud.awi.de/s/Gtn3ezrpWTnR4yj)
 * Exercise: [File timespan (text and solutions)](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/file_timespan.md), [Video](https://nextcloud.awi.de/s/oTTLZW6PpgZxos8)
@@ -50,12 +59,6 @@ During the live workshop, you'll be able to use the QOS `--qos=training` in DKRZ
 #### 3.5. Control computing resources
 * Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/compute_resources.pdf), [Video](https://nextcloud.awi.de/s/xdWj32zcXNYBygi)
 * Exercise: [Costumizing your compute resources](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/compute-resources.md), [Video](https://nextcloud.awi.de/s/Ywws9FHHTPdmLCd)
-#### 3.6. Pipelines and custom steps
-* Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/pipelines_and_custom_steps.pdf), [Video](https://nextcloud.awi.de/s/KkNaoXWESE2zTiM)
-* Exercise: [Add a custom step in the pipeline](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/custom-step.md), [Video](https://nextcloud.awi.de/s/qbzS5MPopt9nBnJ)
-#### 3.7. Combining model output variables
-* Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/combining_variables.pdf)
-* Exercise: [Using aux files](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/aux_files.md)
 #### 3.8. PyFESOM
 * Presentation - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/pyfesom2_features.pdf)
 * Exercise: [Using pyfesom2 with pycmor](https://github.com/esm-tools/pycmor_workshop/blob/main/exercises/pyfesom2_exercises.md)
