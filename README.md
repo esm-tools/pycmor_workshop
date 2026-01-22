@@ -19,14 +19,11 @@ During the live workshop, you'll be able to use the QOS `--qos=training` in DKRZ
 
 ## Outline
 
-### 1. Intro [Pavan]
-  * Workshop intro - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/aims_outline.pdf), [Video](https://nextcloud.awi.de/s/KswDLXAYfiWeeQS)
-    * Aims
-    * Outline
-  * Pycmor [Paul] - [Slides](https://github.com/esm-tools/pycmor_workshop/blob/main/pdfs/pymor_intro.pdf), [Video](https://nextcloud.awi.de/s/9wRE2YaweAX98bp)
+### 1. Intro
+  * Pycmor [Pavan] - [Slides](https://siligam.github.io/pycmor_presentation/1), [Video](https://nextcloud.awi.de/s/9wRE2YaweAX98bp)
     * What is Pycmor? 
     * Main Pycmor features
-  * Demo: [pycmor cli](https://github.com/esm-tools/pycmor_workshop/blob/main/demos/cli.md), [Video](https://nextcloud.awi.de/s/TLcSQkpos66i33n)
+  * Demo [Paul]: [pycmor cli](https://github.com/esm-tools/pycmor_workshop/blob/main/demos/cli.md), [Video](https://nextcloud.awi.de/s/TLcSQkpos66i33n)
   * Time to resolve installation problems @pgierz
     * Have you installed Pycmor inside a conda environment named `pycmor` already?
     * Can you run `pycmor --help` and other commands?
