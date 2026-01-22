@@ -2,7 +2,7 @@ general:
   cmor_version: CMIP6
   CMIP_Tables_Dir: /work/ab0995/a270243/pymor_workshop/cmip6-cmor-tables/Tables/
   CV_Dir: /work/ab0995/a270243/pymor_workshop/cmip6-cmor-tables/CMIP6_CVs/
-pymor:
+pycmor:
   warn_on_no_rule: False
   # dask_cluster: local
   # dask_cluster_scaling_mode: fixed
@@ -31,10 +31,10 @@ rules:
 pipelines:
   - name: linear_trend
     steps:
-        - "pymor.core.gather_inputs.load_mfdataset"
-        - "pymor.std_lib.generic.get_variable"
+        - "pycmor.core.gather_inputs.load_mfdataset"
+        - "pycmor.std_lib.generic.get_variable"
         - "script://add_linear_trend.py:add_linear_trend"
-        - "pymor.std_lib.generic.trigger_compute"
-        - "pymor.std_lib.generic.show_data"
-        - "pymor.std_lib.files.save_dataset"
+        - "pycmor.std_lib.generic.trigger_compute"
+        - "pycmor.std_lib.generic.show_data"
+        - "pycmor.std_lib.files.save_dataset"
 
