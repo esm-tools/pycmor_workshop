@@ -4,7 +4,7 @@ general:
   mip: "CMIP"
   CMIP_Tables_Dir: "../../cmip6-cmor-tables/Tables"
   CV_Dir: "../../cmip6-cmor-tables/CMIP6_CVs"
-pymor:
+pycmor:
   # parallel: True
   warn_on_no_rule: False
   use_flox: True
@@ -14,7 +14,7 @@ pymor:
 rules:
   - name: cellarea_wo
     inputs:
-      - path: ../data
+      - path: ../../data
         pattern: wo_fesom_.*nc
     cmor_variable: wmo
     model_variable: wo
@@ -32,17 +32,17 @@ rules:
 pipelines:
   - name: default
     steps:
-      - "pymor.core.gather_inputs.load_mfdataset"
-      - "pymor.std_lib.generic.get_variable"
+      - "pycmor.core.gather_inputs.load_mfdataset"
+      - "pycmor.std_lib.generic.get_variable"
       - "script://wo_cellarea.py:nodes_to_levels"
-      - "pymor.std_lib.time_average"
+      - "pycmor.std_lib.time_average"
       - "script://wo_cellarea.py:weight_by_cellarea_and_density"
-      - "pymor.std_lib.units.handle_unit_conversion"
-      - "pymor.std_lib.setgrid.setgrid"
-      - "pymor.std_lib.global_attributes.set_global_attributes"
-      - "pymor.std_lib.generic.trigger_compute"
-      - "pymor.std_lib.generic.show_data"
-      - "pymor.std_lib.files.save_dataset"
+      - "pycmor.std_lib.units.handle_unit_conversion"
+      - "pycmor.std_lib.setgrid.setgrid"
+      - "pycmor.std_lib.global_attributes.set_global_attributes"
+      - "pycmor.std_lib.generic.trigger_compute"
+      - "pycmor.std_lib.generic.show_data"
+      - "pycmor.std_lib.files.save_dataset"
 # Settings for using dask-distributed
 distributed:
   worker:
